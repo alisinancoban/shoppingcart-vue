@@ -7,7 +7,7 @@
           <img :src="product.image" alt="" class="image">
           <div>
             <btn class="pull-left mt-5" btnColor="btn btn-circle">-</btn>
-            <input class="input-text pull-left" type="text" name="" id="">
+            <input class="input-text pull-left" type="text" name="" id="" value="1">
             <btn class="pull-left mt-5" btnColor="btn btn-circle">+</btn>
           </div>
         </div>
@@ -26,7 +26,7 @@
       <router-link to="./">Back to list of products</router-link>
     </div>
     <h3 class="total" v-if="hasProduct()">
-      Total: {{ totalPrice() }}
+      Total: {{ totalPrice() }} TL
     </h3>
     <div class="" v-if="hasProduct()">
       <router-link to="/">
@@ -153,6 +153,7 @@ export default {
   .input-text {
     width: 40%;
     margin-left: 10px;
+    text-align: center;
   }
 
   .pull-left {
