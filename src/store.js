@@ -51,16 +51,12 @@ export default new Vuex.Store({
       },
     ],
     cartProducts: [],
-    currentProduct: {},
-    showModal: false,
     showPopupCart: false,
   },
 
   getters: {
     getAllProducts: state => state.products,
     getProductsInCart: state => state.cartProducts,
-    getCurrentProduct: state => state.currentProduct,
-    getShowModal: state => state.showModal,
     getPopupCart: state => state.showPopupCart,
   },
 
@@ -70,12 +66,6 @@ export default new Vuex.Store({
     },
     REMOVE_PRODUCT: (state, index) => {
       state.cartProducts.splice(index, 1);
-    },
-    CURRENT_PRODUCT: (state, product) => {
-      state.currentProduct = product;
-    },
-    SHOW_MODAL: (state) => {
-      state.showModal = !state.showModal;
     },
     SHOW_POPUP_CART: (state) => {
       state.showPopupCart = !state.showPopupCart;
@@ -88,12 +78,6 @@ export default new Vuex.Store({
     },
     removeProduct: (context, index) => {
       context.commit('REMOVE_PRODUCT', index);
-    },
-    currentProduct: (context, product) => {
-      context.commit('CURRENT_PRODUCT', product);
-    },
-    showOrHiddenModal: (context) => {
-      context.commit('SHOW_MODAL');
     },
     showOrHiddenPopupCart: (context) => {
       context.commit('SHOW_POPUP_CART');

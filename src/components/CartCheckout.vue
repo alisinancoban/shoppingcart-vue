@@ -6,9 +6,9 @@
         <div class="product-image">
           <img :src="product.image" alt="" class="image">
           <div>
-            <btn class="pull-left mt-5" btnColor="btn btn-circle">-</btn>
+            <btn class="pull-left mt-5" btnColor="btn btn-circle btn-info">-</btn>
             <input class="input-text pull-left" type="text" name="" id="" value="1">
-            <btn class="pull-left mt-5" btnColor="btn btn-circle">+</btn>
+            <btn class="pull-left mt-5" btnColor="btn btn-circle btn-info">+</btn>
           </div>
         </div>
         
@@ -28,13 +28,13 @@
     <h3 class="total" v-if="hasProduct()">
       Total: {{ totalPrice() }} TL
     </h3>
-    <div class="" v-if="hasProduct()">
+    <div class="checkout-bottom" v-if="hasProduct()">
       <router-link to="/">
-        <btn btnColor="btn btn-large btn-info display-ib">
+        <btn btnColor="btn btn-small btn-info" class="bottom-btn">
           Continue Shopping
         </btn>
       </router-link>
-    <btn btnColor="btn btn-large btn-danger display-ib">
+    <btn btnColor="btn btn-small btn-danger" class="bottom-btn">
           Place Order
     </btn>
     </div>
@@ -101,19 +101,26 @@ export default {
     margin: 1em 0;
   }
 
+  .checkout-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-sizing: border-box;  
+  }
+
+  .bottom-btn {
+    grid-column: 1fr;
+    place-self: stretch center;
+    width: 99%;
+    margin: 0;
+  }
 
   .checkout-product * {
     place-self: center;
-  }
-  .product-image {
-    grid-column: 1/2;
-    
   }
 
   .image {
     width: 99%;
   }
-
 
   .product-name {
     box-sizing: border-box;
@@ -122,16 +129,6 @@ export default {
   .product-price {
     font-size: 1.2em;
     font-weight: bold;
-  }
-
-  .product-remove {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    border: 0;
-    background-color: #E0E0E0;
-    color: #fff;
-    cursor: pointer;
   }
 
   .total {
@@ -144,15 +141,9 @@ export default {
     font-size: 1.5em;
   }
 
-  .display-ib {
-    display: inline-block;
-    width: 45%;
-    margin-left: 40px;
-  }
-
   .input-text {
     width: 40%;
-    margin-left: 10px;
+    margin-left: 0.7em;
     text-align: center;
   }
 

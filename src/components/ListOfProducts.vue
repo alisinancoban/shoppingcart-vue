@@ -55,7 +55,6 @@ export default {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 0;
-    border-collapse: collapse;
   }
 
   .product {
@@ -67,8 +66,9 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 7px;
-    border: 1px solid gray;
+    border: 1px solid #cfd1d0;
+    margin-right:-1px; 
+    margin-bottom:-1px;
   }
 
   .product-name {
@@ -103,7 +103,7 @@ export default {
   }
 
   .pt-10 {
-    padding-top: 10px;
+    padding-top: 0.7em;
   }
 
   img {

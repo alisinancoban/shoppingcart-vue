@@ -5,7 +5,7 @@
          :cartIcon="true"
          @click.native="showPopupCart()">
          Cart
-        <span class="btn-circle" v-if="hasProduct()">
+        <span class="btn-circle btn-danger" v-if="hasProduct()">
            {{ getProductsInCart.length }}
         </span>
       </btn>

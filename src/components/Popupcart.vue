@@ -63,17 +63,6 @@ export default {
     z-index: 1;
   }
 
-  .box:after {
-    content: '';
-    width: 30px;
-    height: 30px;
-    transform: rotate(45deg);
-    background: inherit;
-    position: absolute;
-    top: -15px;
-    right: 15px;
-  }
-
   .box-item {
     width: 100%;
     height: 130px;
